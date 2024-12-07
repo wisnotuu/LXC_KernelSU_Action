@@ -173,8 +173,8 @@ jobs:
           export KSU_EXPECTED_HASH=${{ env.KSU_EXPECTED_HASH }}
         fi 
         sh ../gcc64/relocate-sdk.sh
-        make -j$(nproc --all) O=out ARCH=${{ env.ARCH }} CROSS_COMPILE=aarch64-buildroot-linux-gnu- CROSS_COMPILE_ARM32=arm-eabi- ${{ env.KERNEL_CONFIG }}
-        make -j$(nproc --all) O=out ARCH=${{ env.ARCH }} CROSS_COMPILE=aarch64-buildroot-linux-gnu- CROSS_COMPILE_ARM32=arm-eabi-
+        make -j$(nproc --all) O=out ARCH=${{ env.ARCH }} CROSS_COMPILE=aarch64-buildroot-linux-gnu- ${{ env.KERNEL_CONFIG }}
+        make -j$(nproc --all) O=out ARCH=${{ env.ARCH }} CROSS_COMPILE=aarch64-buildroot-linux-gnu- 
 
     - name: Check a kernel output files
       run: |
